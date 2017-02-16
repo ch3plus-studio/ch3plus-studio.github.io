@@ -1,0 +1,49 @@
+---
+layout: home
+---
+
+<div class="home">
+  
+  
+ <div class="col col-12">
+      <div class="col col-3">
+          <div class="block deepgrey"  style="background-image:url(assets/logo.png); background-repeat: no-repeat; background-position: center;">      
+          </div>
+      </div>
+      <div class="col col-9">
+        <div class="block deepgrey">
+            <div class="block-body" style="display: inline-block;">
+                <h2>Code without boundary</h2>
+				speak 
+				<span style="font-size:46px; vertical-align:middle">
+					<i class="bitIcon-java-alt" alt="Java"></i><i class="bitIcon-cs" alt="C Sharp"></i><i class="bitIcon-scala" alt="Scala"></i><i class="bitIcon-python" alt="Python"></i><i class="bitIcon-html5" alt="HTML5"></i>&nbsp;<i class="icon-FIX-Protocol" alt="FIX Protocol"></i></span>&nbsp;&nbsp;&nbsp;and more on
+				<span style="font-size:32px; vertical-align:middle">&nbsp;<i class="fi flaticon-smartphone-call" alt="Mobile"></i>&nbsp;&nbsp;<i class="fi flaticon-technology" alt="Desktop"></i>&nbsp;&nbsp;<i class="fi flaticon-technology-1" alt="Server"></i></span>
+            </div>
+        </div>
+      </div>  
+  </div>
+  <div class="col col-12">
+    {% for post in site.posts %}
+      <div class="col col-{{post.width}}">
+        <div class="block {{post.color}}" style="background-image:url(projects-pic/{{post.img}})">
+			<div class="block {{post.color}} block-bg">
+				<div class="block-body height-{{post.height}}">
+					<!-- <span class="post-meta white-text">{{ post.date | date: "%b %-d, %Y" }}</span> -->
+
+					{% if post.status == 'Published' %}
+					<h2>
+					  <a class="post-link white-text" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+					</h2>
+					{% else %}
+					<h2>
+						{{ post.title }}
+					</h2>
+					Under development
+					{% endif %}
+				</div>
+			</div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+</div>
